@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <entry key="OK">정상</entry>
+    <entry key="NG">오류</entry>
+    <entry key="msg000001">안녕하세요</entry>
+	
+	<entry key="HTTP.ERROR.404">페이지가 존재하지 않습니다.</entry>
+	
+	
+    <entry key="CM000010">정상적으로 저장 되었습니다.</entry>
+    <entry key="CM000020">저장이 되지 않았습니다.</entry>
+    <entry key="CM000030">왼쪽과 오른쪽 사용자 정보가 일치하지 않습니다.</entry>
+    
+    <entry key="SYSTEM-ERROR-00000000001"><![CDATA[시스템 ERROR 발생하였습니다. 관리자에게 문의 하시기 바랍니다.]]></entry>
+    
+    <entry key="SECURITY-ERROR-00000000001"><![CDATA[아이디 또는 비밀번호가 일치하지 않습니다.]]></entry>
+
+    <entry key="SVCAPI-USER-00000000001"><![CDATA[아이디 또는 비밀번호가 일치하지 않습니다.]]></entry>
+    <entry key="SVCAPI-USER-00000000002"><![CDATA[아이디 또는 비밀번호가 일치하지 않습니다.]]></entry>
+    <entry key="SVCAPI-USER-00000000003"><![CDATA[정상적으로 처리 되었습니다.]]></entry>
+    <entry key="SVCAPI-USER-00000000004"><![CDATA[이미 만료된 로그인 정보입니다.]]></entry>
+    
+    <entry key="SVCAPI-USER-00000000005"><![CDATA[로그인 토큰 갱시너에 실패하였습니다.\n 사유 : {0}\n요청 : {1}, 서버 : {2}]]></entry>
+
+    <entry key="CM_URL_INFO-00000000001"><![CDATA[이미 존재하는 URL 아이디입니다.\n URL아이디 : {0}]]></entry>
+    <entry key="CM_URL_INFO-00000000002"><![CDATA[URL이 존재하지 않습니다.]]></entry>
+    <entry key="CM_URL_INFO-00000000003"><![CDATA[URL 삭제에 실패하였습니다. 관리자에게 문의 하시기 바랍니다.]]></entry>
+    <entry key="CM_URL_INFO-00000000004"><![CDATA[URL 수정에 실패하였습니다. 관리자에게 문의 하시기 바랍니다.]]></entry>
+
+    <entry key="CM_MENU-00000000001"><![CDATA[이미 존재하는 MENU 아이디입니다.\n MENU아이디 : {0}]]></entry>
+    <entry key="CM_MENU-00000000002"><![CDATA[MENU가 존재하지 않습니다.]]></entry>
+    <entry key="CM_MENU-00000000003"><![CDATA[MENU 삭제에 실패하였습니다. 하위 메뉴가 존재합니다.]]></entry>
+    <entry key="CM_MENU-00000000004"><![CDATA[MENU 수정에 실패하였습니다. 관리자에게 문의 하시기 바랍니다.]]></entry>
+
+    <entry key="CM_PAGE_MGT-00000000001"><![CDATA[이미 존재하는 PAGE-MGT 아이디입니다.\n URL-API아이디 : {0}]]></entry>
+    <entry key="CM_PAGE_MGT-00000000002"><![CDATA[URL-API가 존재하지 않습니다.\n URL-API아이디 : {0}]]></entry>
+    <entry key="CM_PAGE_MGT-00000000003"><![CDATA[URL-API 삭제에 실패하였습니다. 관리자에게 문의 하시기 바랍니다.]]></entry>
+    <entry key="CM_PAGE_MGT-00000000004"><![CDATA[URL-API 수정에 실패하였습니다. 관리자에게 문의 하시기 바랍니다.]]></entry>
+    
+    
+    <entry key="CM_RSA_KEY_MGT-00000000001"><![CDATA[RSA KEY 생성 할수 없는 시스템 코드를 요청하셨습니다.\n관리자에게 문의 하시기 바랍니다.\n요청 시스템 코드 [{0}] ]]></entry>
+    <entry key="CM_RSA_KEY_MGT-00000000002"><![CDATA[RSA KEY 생성중 ERROR 발생 되었습니다.\n관리자에게 문의 하시기 바랍니다.]]></entry>
+</properties>

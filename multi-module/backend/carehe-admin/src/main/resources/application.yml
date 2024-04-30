@@ -1,0 +1,95 @@
+server:
+  port: 8282
+  servlet:
+    context-path: /
+  project-name: carehe-app
+  tomcat:
+    max-connections: 1000
+    accept-count: 100
+    connection-timeout: 2000
+    threads:
+      max: 200
+      min-spare: 30
+logging:
+  config: classpath:log4j2.xml
+spring:
+  redis:
+    jedis:
+      pool:
+        connect-timeout-millis: 3000
+        max-total-count: 200
+        max-idle-count: 100
+        min-idle-count: 50
+    cluster:
+      nodes[0]: 192.168.1.153:6379
+      nodes[1]: 192.168.1.153:6380
+      nodes[2]: 192.168.1.153:6381
+      nodes[3]: 192.168.1.154:6382
+      nodes[4]: 192.168.1.154:6383
+      nodes[5]: 192.168.1.154:6384
+      nodes[6]: 192.168.1.155:6385
+      nodes[7]: 192.168.1.155:6386
+      nodes[8]: 192.168.1.155:6387
+  datasource:    
+    default-db:
+      platform: mariadb
+      driver-class-name: org.mariadb.jdbc.Driver
+      type-description: JNDI(tomcat base), POOL(HikariDataSource), 그외 (DataSourceBuilder)
+      type: JNDI
+      jdbc-url: jdbc:mariadb://192.168.1.154:4306/carelinkKR?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true
+      username: dbuser
+      password: carelink1@
+      jndi-name: java:comp/env/carehe-admin
+      resource-name: carehe-admin
+      tomcat:
+        initial-size: 10
+        max-total: 50
+        min-idle: 5
+        max-idle: 50
+        max-wait-millis: 1000
+        validation-query: select 1
+        factory: org.apache.commons.dbcp2.BasicDataSourceFactory
+      hikari:
+        maximum-pool-size: 50
+        minimum-idle: 20
+        connection-timeout: 30000
+        idle-timeout: 60000
+        max-lifetime: 300000                
+  jpa:
+    database: POSTGRESQL
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: true
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        allow_update_outside_transaction: true
+        format_sql: true
+        highlight_sql: true
+    packages-to-scan: com.hcl.carehe.common.api.common.entity.**.**
+
+  mybatis:
+    config-location: classpath:mybatis-config.xml
+    mapper-locations: classpath:com/hcl/carehe/common/**/mapper/*.xml,classpath:com/hcl/carehe/admin/**/mapper/*.xml
+    type-aliases-package: com.hcl.carehe.common.api.common.entity.**.**
+    base-packages[0]: com.hcl.carehe.**.api.**.mapper
+jwt:
+  header: Authorization
+  #HS512 알고리즘을 사용할 것이기 때문에 512bit, 즉 64byte 이상의 secret key를 사용해야 한다.
+  #echo 'hcarelink.com|carehe|hcarelink.com|carehe|hcarelink.com|carehe|hcarelink.com|carehe|hcarelink.com|carehe|hcarelink.com|carehe|hcarelink.com|carehe|hcarelink.com|carehe'|base64
+  access-token-secret: aGNhcmVsaW5rLmNvbXxjYXJlaGV8aGNhcmVsaW5rLmNvbXxjYXJlaGV8aGNhcmVsaW5rLmNvbXxjYXJlaGV8aGNhcmVsaW5rLmNvbXxjYXJlaGV8aGNhcmVsaW5rLmNvbXxjYXJlaGV8aGNhcmVsaW5rLmNvbXxjYXJlaGV8aGNhcmVsaW5rLmNvbXxjYXJlaGV8aGNhcmVsaW5rLmNvbXxjYXJlaGU=
+  refresh-token-secret: 7ZWc7Lu07LyA7Ja066eB7YGsfOy8gOyWtO2VtHztlZzsu7TsvIDslrTrp4Htgax87LyA7Ja07ZW0fO2VnOy7tOy8gOyWtOunge2BrHzsvIDslrTtlbR87ZWc7Lu07LyA7Ja066eB7YGsfOy8gOyWtO2VtHztlZzsu7TsvIDslrTrp4Htgax87LyA7Ja07ZW0fO2VnOy7tOy8gOyWtOunge2BrHzsvIDslrTtlbQ=
+#  token-validity-in-milli-seconds: 864000000
+  token-validity-in-milli-seconds: 1800000
+  refresh-token-validity-in-milli-seconds: 3600000
+
+hcl:
+  security:
+    salt: hclnew1234!
+  rsa:
+    key-size: 5120
+    key-security-type: RSA  
+  mail:
+    sender: carehe-admin@hancomcl.com
+    password: vqwg9qe2exgqkeb

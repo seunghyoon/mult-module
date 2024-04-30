@@ -1,0 +1,18 @@
+dependencies {
+	implementation project(":carehe-common")
+	
+	//security
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation group: 'io.jsonwebtoken', name: 'jjwt-impl', version: '0.12.5'
+	implementation group: 'io.jsonwebtoken', name: 'jjwt-jackson', version: '0.12.5'
+		
+	//runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-impl', version: '0.12.5'
+	//runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-jackson', version: '0.12.5'
+}
+
+bootJar { 
+	enabled = true 
+}
+jar { 
+	enabled = true
+}

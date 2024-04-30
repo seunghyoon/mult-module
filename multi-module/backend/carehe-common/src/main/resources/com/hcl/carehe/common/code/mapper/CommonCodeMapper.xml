@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hcl.carehe.common.api.code.mapper.CommonCodeMapper">
+	
+   <select id="findCommonCodegByGoupCode" 
+    	resultType="java.util.HashMap">
+      <![CDATA[
+      	SELECT ccd.code,
+               ccd.code_nm,
+               ccd.code_desc,
+               ccd.attr1,
+               ccd.attr2,
+               ccd.attr3
+      	FROM CM_CODE_GRP ccg 
+      	INNER JOIN CM_CODE_DTL ccd ON (ccg.grp_cd = ccd.grp_cd)
+      	WHERE ccd.use_yn = 'Y'
+      	AND ccd.grp_cd = #{groupCode}
+      	ORDER BY ccd.sort_no        	
+      ]]>  
+   </select>
+   
+   <select id="findCommonCodegByGoupCodes" 
+    	resultType="commonCode">
+      <![CDATA[
+      	SELECT ccd.code AS code,
+               ccd.code_nm AS code_nm,
+               ccd.code_desc AS code_desc,
+               ccd.attr1 AS attr1,
+               ccd.attr2 AS attr2,
+               ccd.attr3 AS attr3
+      	FROM CM_CODE_GRP ccg 
+      	INNER JOIN CM_CODE_DTL ccd ON (ccg.grp_cd = ccd.grp_cd)
+      	WHERE ccd.use_yn = 'Y'
+      	AND ccd.grp_cd = #{groupCode}
+      	ORDER BY ccd.sort_no        	
+      ]]>  
+   </select>
+   
+   
+   
+</mapper>

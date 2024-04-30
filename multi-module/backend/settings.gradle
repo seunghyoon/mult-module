@@ -1,0 +1,5 @@
+rootProject.name = 'backend'
+include 'carehe-common'
+include 'carehe-app'
+include 'carehe-admin'
+include 'carehe-batch'
